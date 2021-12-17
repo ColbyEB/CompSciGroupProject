@@ -31,8 +31,9 @@ public class Account
     {
         String username = s.next();
         String password = s.next();
+        Account loginAttempt = new Account(username, password);
         int index =  accountList.indexOf(username);
-        if (accountList.contains(username) && accountList.indexOf(password) == index)
+        if (accountList.contains(loginAttempt))
         {
             name = username;
             this.password = password;
