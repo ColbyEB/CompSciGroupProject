@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Account
@@ -28,15 +27,15 @@ public class Account
     public void setName(String name) {
         this.name = name;
     }
-    public void login()
+    public void login(ArrayList<Account> accountList)
     {
         String username = s.next();
         String password = s.next();
-        int index = loginInfo.indexOf(username);
-        if (loginInfo.contains(username) && loginInfo.indexOf(password) == index)
+        int index =  accountList.indexOf(username);
+        if (accountList.contains(username) && accountList.indexOf(password) == index)
         {
             name = username;
-
+            this.password = password;
         }
         else
         System.out.println("Please log in with valid credentials");

@@ -12,13 +12,11 @@ public class AccountTester
         credentials.add(a1);
         credentials.add(a2);
         String messageText = "Hello World!";
-        loggedIn.login();
+        loggedIn.login(credentials);
         Message message = new Message(loggedIn, null, messageText);
         while (true)
         {
             message.recipient.setName(scanner.next());
-
         }
-
     }
 }
