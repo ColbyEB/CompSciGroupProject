@@ -10,12 +10,17 @@ public class Message
         this.content = content;
     }
 
-    public void setSender(Account sender) {
+    public void setSender(Account sender) 
+    {
         this.sender = sender;
     }
 
     public String getContent()
     {
         return content;
+    }
+    public void getRecipient(Account recipient) 
+    {
+    	this.recipient;
     }
 }

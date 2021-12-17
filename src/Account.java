@@ -12,19 +12,23 @@ public class Account
     Scanner s = new Scanner(System.in);
     ArrayList inboxMessages = new ArrayList<Message>();
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public String getPassword() {
+    public String getPassword() 
+    {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) 
+    {
         this.password = password;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
     public void login(ArrayList<Account> accountList)
