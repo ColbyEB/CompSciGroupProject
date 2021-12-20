@@ -9,7 +9,6 @@ public class Account
         this.name = name;
         this.password = password;
     }
-    Scanner s = new Scanner(System.in);
     ArrayList inboxMessages = new ArrayList<Message>();
 
     public String getName() {
@@ -29,6 +28,7 @@ public class Account
     }
     public void login(ArrayList<Account> accountList)
     {
+        Scanner s = new Scanner(System.in);
         System.out.println("Username:");
         String loginUsername = s.next();
         System.out.println("Pasword:");
@@ -48,6 +48,7 @@ public class Account
             System.out.println("Incorrect credentials, please login with a valid username and password.");
             login(accountList);
         }
+        s.close();
     }
     public String toString()
     {
@@ -57,11 +58,5 @@ public class Account
     {
         message.sender.name = name;
         message.recipient.inboxMessages.add(0, message);
-    }
-    public boolean equals(Account account)
-    {
-        if (account.getName() == name && account.getPassword() == password)
-            return true;
-        else return false;
     }
 }
