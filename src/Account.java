@@ -13,7 +13,7 @@ public class Account
     String password;
     
     /**
-     * 
+     * Creates an account with its name and the password.
      * @param name String of the account's name
      * @param password String of the account's password
      */
