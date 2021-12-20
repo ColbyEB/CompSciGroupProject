@@ -5,6 +5,8 @@ public class AccountTester
     public static void main(String[] args)
     {
         System.out.println("type \"help\" for help");
+        InputCommands inputCommands = new InputCommands();
+        inputCommands.checkForCommands();
         Scanner scanner = new Scanner(System.in);
         Account a1 = new Account("a1", "admin");
         Account a2 = new Account("a2", "admin");
