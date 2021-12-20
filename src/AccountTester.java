@@ -13,10 +13,7 @@ public class AccountTester
         credentials.add(a2);
         String messageText = "Hello World!";
         loggedIn.login(credentials);
+        
         Message message = new Message(loggedIn, null, messageText);
-        while (true)
-        {
-            message.recipient.setName(scanner.next());
-        }
     }
 }
