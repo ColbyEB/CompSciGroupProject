@@ -33,21 +33,39 @@ public class Account
     }
     public void login(ArrayList<Account> accountList)
     {
-        String username = s.next();
-        String password = s.next();
-        int index =  accountList.indexOf(username);
-        if (accountList.contains(username) && accountList.indexOf(password) == index)
-        {
-            name = username;
-            this.password = password;
+        System.out.println("Username:");
+        String loginUsername = s.next();
+        System.out.println("Pasword:");
+        String loginPassword = s.next();
+        boolean loggedIn = false;
+        for (int i = 0; i < accountList.size(); i++) {
+            if (accountList.get(i).getName().equals(loginUsername) && accountList.get(i).getPassword().equals(loginPassword)) {
+                name = loginUsername;
+                password = loginPassword;
+                System.out.println("Successfully logged in as " + loginUsername);
+                loggedIn = true;
+                break;
+            }
         }
-        else
-        System.out.println("Please log in with valid credentials");
+        if (loggedIn == false)
+        {
+            System.out.println("Incorrect credentials, please login with a valid username and password.");
+            login(accountList);
+        }
     }
-
+    public String toString()
+    {
+        return name + " " + password;
+    }
     public void sendMessage(Message message)
     {
         message.sender.name = name;
         message.recipient.inboxMessages.add(0, message);
+    }
+    public boolean equals(Account account)
+    {
+        if (account.getName() == name && account.getPassword() == password)
+            return true;
+        else return false;
     }
 }
